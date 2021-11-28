@@ -35,18 +35,18 @@ class _StoryPageState extends State<StoryPage> {
             fit: BoxFit.fill,
           ),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-        constraints: const BoxConstraints.expand(),
+        padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+        constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Expanded(
+              Expanded(
                 flex: 12,
                 child: Center(
                   child: Text(
-                    'Story text will go here.',
-                    style: TextStyle(
+                    storyBrain.getStory(),
+                    style: const TextStyle(
                       fontSize: 25.0,
                     ),
                   ),
@@ -59,16 +59,16 @@ class _StoryPageState extends State<StoryPage> {
                     //Choice 1 made by user.
                   },
                   style: TextButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text(
-                    'Choice 1',
-                    style: TextStyle(
+                  child: Text(
+                    storyBrain.getChoice1(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20.0,
               ),
               Expanded(
@@ -78,8 +78,8 @@ class _StoryPageState extends State<StoryPage> {
                     //Choice 2 made by user.
                   },
                   style: TextButton.styleFrom(backgroundColor: Colors.blue),
-                  child: const Text(
-                    'Choice 2',
+                  child: Text(
+                    storyBrain.getChoice2(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
